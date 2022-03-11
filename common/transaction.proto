@@ -37,7 +37,12 @@ message Transaction {
         oneof server {
             Res res = 2;
             ResPart res_part = 3;
+            Noop noop = 4;
         }
+    }
+
+    message Noop {
+
     }
 
     message Req {

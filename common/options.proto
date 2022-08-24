@@ -38,6 +38,9 @@ message Options {
     oneof parallel_opt {
         bool parallel = 4;
     }
+    oneof profile_opt {
+        bool profile = 11;
+    }
     oneof prefetch_size_opt {
         int32 prefetch_size = 5;
     }

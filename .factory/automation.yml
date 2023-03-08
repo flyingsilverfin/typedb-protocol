@@ -67,9 +67,6 @@ build:
         bazel run --define version=$(git rev-parse HEAD) //grpc/nodejs:deploy-npm -- snapshot
       dependencies: [build, build-dependency]
     deploy-pip-snapshot:
-      filter:
-        owner: vaticle
-        branch: master
       image: vaticle-ubuntu-22.04
       type: foreground
       command: |
@@ -82,7 +79,6 @@ build:
         export DEPLOY_PIP_USERNAME=$REPO_VATICLE_USERNAME
         export DEPLOY_PIP_PASSWORD=$REPO_VATICLE_PASSWORD
         bazel run --define version=$(git rev-parse HEAD) //grpc/python:deploy-pip -- snapshot
-      dependencies: [build, build-dependency]
     deploy-crate-snapshot:
       filter:
         owner: vaticle

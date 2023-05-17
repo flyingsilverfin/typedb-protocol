@@ -82,7 +82,7 @@ build:
         sudo ln -s /usr/share/pyshared/lsb_release.py /opt/pyenv/versions/3.7.9/lib/python3.7/site-packages/lsb_release.py
         export DEPLOY_PIP_USERNAME=$REPO_VATICLE_USERNAME
         export DEPLOY_PIP_PASSWORD=$REPO_VATICLE_PASSWORD
-        bazel run --define version=$(git rev-parse HEAD) //grpc/python:deploy-pip -- snapshot
+        bazel run --define version=$(cat VERSION) //grpc/python:deploy-pip -- snapshot
 #      dependencies: [build, build-dependency]
 #    deploy-crate-snapshot:
 #      filter:

@@ -86,6 +86,9 @@ message ReadableConceptTree {
                 Value value = 6;
 
                 ThingType.Root thing_type_root = 7;
+
+                // TODO: when we break backward compatibility, we can replace this with a Leaf(optional ReadableConcept) structure
+                bool empty = 8;
             }
         }
     }
